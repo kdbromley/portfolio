@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import { Component, Link } from 'react';
+import { Route } from 'react-router';
+import Navbar from './Navbar/Navbar';
+import About from './About/About';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+
+  render() {
+    return (
+      <div className="App">
+        <header>
+          <h1 className='header__title'>
+            k.d. Bromley
+          </h1>
+        </header>
+        <main>
+          <div>
+          </div>
+        </main>
+      </div>
+    );
+  }
 }
 
-export default App;
