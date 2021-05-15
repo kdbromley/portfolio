@@ -1,3 +1,29 @@
 .About__container {
     border: 1px white solid;
+    color: white;
+    padding: 2%;
 }
+
+.About__container > h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.skills__list {
+    flex: 1;
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+}
+
+.About__desc {
+    line-height: 1.5em;
+}
+
+ul {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+

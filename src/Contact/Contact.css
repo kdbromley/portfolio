@@ -1,3 +1,8 @@
 .Contact__container {
     border: 1px white solid;
+    color: white;
+}
+
+label {
+    display: block;
 }
