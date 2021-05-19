@@ -8,9 +8,33 @@ import { STORE } from './projects-store';
 import './App.css';
 
 export default class App extends Component {
+  state = {
+    isNavbarVis: false
+  }
+  
   findProject = (projectName) => {
     return STORE.projects.find(project => project.name === projectName)
   }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll = () => {
+    var page = document.querySelector('main');
+    if (window.scrollY > 30) {
+      document.querySelector('.header__title').className='header__title sticky';
+      var navHeight = document.querySelector('.header__title').offsetHeight
+      page.style.paddingTop = navHeight + 'px';
+    } else {
+      document.querySelector('.header__title').className='header__title';
+      page.style.paddingTop = 0 + 'px'
+    }
+  };
 
   renderRoutes() {
     return(
@@ -42,10 +66,13 @@ export default class App extends Component {
     return (
       <div className="App">
         <header>
-          <h1 className='header__title'>
-            K.D. BROMLEY
-          </h1>
-          <Navbar />
+          <div>
+            <h1 className={`header__title`} id='title'>
+              K.D.<span> </span>BROMLEY
+            </h1>
+          </div>
+         { this.state.isNavbarVis &&
+           <Navbar /> }
         </header>
         <main>
           {this.renderRoutes()}
