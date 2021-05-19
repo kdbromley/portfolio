@@ -1,12 +1,12 @@
 import { Component, Link } from 'react';
 import { Route } from 'react-router';
+import menuIcon from './icons/menu.svg';
 import Navbar from './Navbar/Navbar';
 import About from './About/About';
 import Contact from './Contact/Contact';
 import Project from './Project/Project';
 import { STORE } from './projects-store';
 import './App.css';
-import Button from './Button/Button';
 
 export default class App extends Component {
   state = {
@@ -36,6 +36,10 @@ export default class App extends Component {
       page.style.paddingTop = 5 + 'px'
     }
   };
+
+  handleMenuClick = () => {
+    this.setState({isNavbarVis: !this.state.isNavbarVis})
+  }
 
   renderRoutes() {
     return(
@@ -71,7 +75,10 @@ export default class App extends Component {
             <h1 className={`header__title`} id='title'>
               K.D.<span> </span>BROMLEY
             </h1>
-            <Button aria-label='Open navbar menu' label='menu' class='menu' />
+            <button className='menu-button' aria-label='Open navbar menu'
+             onClick={this.handleMenuClick}>
+              <img src={menuIcon} alt='Navbar Menu Icon' />
+            </button>
           </div>
          { this.state.isNavbarVis &&
            <Navbar aria='true' classes='' /> }
