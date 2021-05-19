@@ -1,0 +1,32 @@
+button {
+    background: transparent;
+    border: none;
+    min-width: 40px;
+    min-height: 40px;
+    height: calc(40px + 50 * ((100vw - 320px) / 680));
+    width: calc(40px + 50 * ((100vw - 320px) / 680));
+    transition-duration: 0.35s;
+    padding: 0px 0px 0px 2px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+img {
+    filter: invert(24%) sepia(68%) saturate(793%) hue-rotate(170deg) brightness(95%) contrast(80%);
+    height: calc(40px + 50 * ((100vw - 320px) / 680));
+    width: calc(40px + 50 * ((100vw - 320px) / 680));
+}
+
+@media all and (min-width: 800px) {
+    button {
+        height: calc(25px + 50 * ((100vw - 320px) / 680));
+        width: calc(25px + 50 * ((100vw - 320px) / 680));
+    }
+
+    img {
+        height: calc(20px + 40 * ((100vw - 320px) / 680));
+        width: calc(20px + 40 * ((100vw - 320px) / 680));
+    }
+}

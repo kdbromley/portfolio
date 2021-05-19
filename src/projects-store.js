@@ -6,7 +6,8 @@ export const STORE = {
             "description": `Second fullstack capstone for Thinkful - a music sharing social media app. Frontend built 
                 with React. Backend is an Express server and PostgreSQL database. Also utilizes Spotify's API.`,
             "tech": ['HTML', 'CSS', 'Javascript', 'React', 'Node.js', 'Express.js', 'PostgreSQL', 'SQL/Knex', 'Fetch API calls'],
-            "link": 'https://github.com/kdbromley/minder-app'
+            "github": 'https://github.com/kdbromley/minder-app',
+            "url": ""
         },
         {
             "id": 2,
@@ -14,15 +15,17 @@ export const STORE = {
             "description": `First fullstack capstone for Thinkful. A reminders app built with React and backend consisting
                 of an Express server and Heroku PostgreSQL database.`,
             "tech": ['HTML', 'CSS', 'Javascript', 'React', 'Node.js', 'Express.js', 'PostgreSQL', 'SQL/Knex'],
-            "link": 'https://github.com/kdbromley/on-aux'
+            "github": 'https://github.com/kdbromley/on-aux',
+            "url": ""
         },
         {
             "id": 3,
             "name": 'noteful',
-            "description": `Fullstack project completed in two parts for Thinkful. Frontend completed as a capstone for React coursework.
+            "desc": `Fullstack project completed in two parts for Thinkful. Frontend completed as a capstone for React coursework.
                 Backend completed as part coursework on Node.js and Postgres`,
             "tech": ['HTML', 'CSS', 'Javascript', 'React', 'Node.js', 'Express.js', 'PostgreSQL', 'SQL/Knex'],
-            "link": 'https://github.com/kdbromley/noteful'
+            "github": 'https://github.com/kdbromley/noteful',
+            "url": ""
         },
     ]
 }
