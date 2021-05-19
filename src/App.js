@@ -6,6 +6,7 @@ import Contact from './Contact/Contact';
 import Project from './Project/Project';
 import { STORE } from './projects-store';
 import './App.css';
+import Button from './Button/Button';
 
 export default class App extends Component {
   state = {
@@ -26,13 +27,13 @@ export default class App extends Component {
 
   handleScroll = () => {
     var page = document.querySelector('main');
-    if (window.scrollY > 30) {
-      document.querySelector('.header__title').className='header__title sticky';
-      var navHeight = document.querySelector('.header__title').offsetHeight
-      page.style.paddingTop = navHeight + 'px';
+    if (window.scrollY > 28) {
+      document.querySelector('.header__title-container').className='header__title-container sticky';
+      var headHeight = document.querySelector('.header__title-container').offsetHeight
+      page.style.paddingTop = (headHeight + 35 ) + 'px';
     } else {
-      document.querySelector('.header__title').className='header__title';
-      page.style.paddingTop = 0 + 'px'
+      document.querySelector('.header__title-container').className='header__title-container';
+      page.style.paddingTop = 5 + 'px'
     }
   };
 
@@ -66,13 +67,15 @@ export default class App extends Component {
     return (
       <div className="App">
         <header>
-          <div>
+          <div className={`header__title-container`}>
             <h1 className={`header__title`} id='title'>
               K.D.<span> </span>BROMLEY
             </h1>
+            <Button aria-label='Open navbar menu' label='menu' class='menu' />
           </div>
          { this.state.isNavbarVis &&
-           <Navbar /> }
+           <Navbar aria='true' classes='' /> }
+           <Navbar aria='false' classes='screenreader'/>
         </header>
         <main>
           {this.renderRoutes()}

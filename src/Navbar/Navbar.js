@@ -3,7 +3,7 @@ import './Navbar.css';
 
 export default function Navbar(props) {
     return (
-        <nav>
+        <nav className={props.classes} aria-hidden={props.aria}>
             <ul className='Navbar__links'>
                 <Link to='#about'><li>about</li></Link>
                 <Link to='#projects'><li>projects</li></Link>

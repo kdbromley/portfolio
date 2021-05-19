@@ -22,6 +22,20 @@ a:link, a:visited, a:hover, a:active {
     text-decoration: none;
 }
 
+.screenreader {
+    position: absolute;
+    left: -1000px; 
+    top: -1000px;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+  }
+
 @media all and (min-width: 600px) {
     nav  {
         font-size: 40px;
