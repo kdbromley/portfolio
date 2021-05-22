@@ -14,7 +14,7 @@ button:hover {
 }
 
 img {
-    filter: invert(24%) sepia(68%) saturate(793%) hue-rotate(170deg) brightness(95%) contrast(80%);
+    filter: invert(67%) sepia(32%) saturate(317%) hue-rotate(115deg) brightness(86%) contrast(86%);
     height: calc(40px + 50 * ((100vw - 320px) / 680));
     width: calc(40px + 50 * ((100vw - 320px) / 680));
 }

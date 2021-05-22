@@ -1,4 +1,4 @@
-import { Component, Link } from 'react';
+import { Component } from 'react';
 import { Route } from 'react-router';
 import menuIcon from './icons/menu.svg';
 import Navbar from './Navbar/Navbar';
@@ -7,10 +7,12 @@ import Contact from './Contact/Contact';
 import Project from './Project/Project';
 import { STORE } from './projects-store';
 import './App.css';
+import { Link } from 'react-router-dom';
 
 export default class App extends Component {
   state = {
-    isNavbarVis: false
+    isNavbarVis: false,
+    isMobile: false,
   }
   
   findProject = (projectName) => {
@@ -19,6 +21,12 @@ export default class App extends Component {
 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
+    if(window.innerWidth < 600) {
+      this.setState({ isMobile: true })
+    } else {
+      this.setState({ isMobile: false })
+    }
+
   }
 
   componentWillUnmount() {
@@ -27,12 +35,14 @@ export default class App extends Component {
 
   handleScroll = () => {
     var page = document.querySelector('main');
-    if (window.scrollY > 28) {
+    if (window.scrollY > 26) {
       document.querySelector('.header__title-container').className='header__title-container sticky';
+      document.querySelector('.header__title').className='header__title sticky-text';
       var headHeight = document.querySelector('.header__title-container').offsetHeight
-      page.style.paddingTop = (headHeight + 35 ) + 'px';
+      page.style.paddingTop = (headHeight + 39 ) + 'px';
     } else {
       document.querySelector('.header__title-container').className='header__title-container';
+      document.querySelector('.header__title').className='header__title';
       page.style.paddingTop = 5 + 'px'
     }
   };
@@ -68,14 +78,23 @@ export default class App extends Component {
   }
 
   render() {
+   /* if(this.state.isMobile) {
+      document.querySelector('.mobile').className='menu-button mobile'
+      document.querySelector('.desktop').className='menu-button desktop invisible'
+    } else {
+
+      document.querySelector('.desktop').className='menu-button desktop'
+      document.querySelector('.mobile').className='menu-button mobile invisible'
+    }*/
     return (
       <div className="App">
         <header>
           <div className={`header__title-container`}>
-            <h1 className={`header__title`} id='title'>
+            <Link to='/'> <h1 className={`header__title`} id='title'>
               K.D.<span> </span>BROMLEY
             </h1>
-            <button className='menu-button' aria-label='Open navbar menu'
+            </Link>
+            <button className='menu-button desktop' aria-label='Open navbar menu'
              onClick={this.handleMenuClick}>
               <img src={menuIcon} alt='Navbar Menu Icon' />
             </button>
@@ -86,6 +105,10 @@ export default class App extends Component {
         </header>
         <main>
           {this.renderRoutes()}
+          <button className='menu-button mobile' aria-label='Open navbar menu'
+           onClick={this.handleMenuClick}>
+              <img src={menuIcon} alt='Navbar Menu Icon' />
+          </button>
         </main>
         <footer>
           © 2021 k.d. Bromley
