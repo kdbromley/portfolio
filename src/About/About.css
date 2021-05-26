@@ -1,15 +1,23 @@
 .About__container {
-    border: 1px white solid;
-    color: white;
-    padding: 2%;
+    color: #e9d6ab;
+    margin-top: 15px;
 }
 
-.About__container > h3 {
+.About__skills > h3, .About__desc > h3 {
     margin-top: 10px;
     margin-bottom: 10px;
+    padding-top: 3%;
+}
+
+.About__skills {
+    background-color:  #4e4b4b;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .skills__list {
+    margin:0;
+    padding: 0 5% 5% 5%;
     flex: 1;
     columns: 3;
     -webkit-columns: 3;
@@ -18,6 +26,7 @@
 
 .About__desc {
     line-height: 1.5em;
+    background-color: #4e4b4b;;
 }
 
 ul {
@@ -25,5 +34,9 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.more {
+    display: none;
 }
 

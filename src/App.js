@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Route } from 'react-router';
-import menuIcon from './icons/menu.svg';
+import menuIcon from './img/menu.svg';
 import Navbar from './Navbar/Navbar';
 import About from './About/About';
 import Contact from './Contact/Contact';
@@ -59,11 +59,13 @@ export default class App extends Component {
        path='/'
        render={() => 
         <>
-         <About />
+        <div className='Projects'>
          <h2>Projects</h2>
          {STORE.projects.map(project => 
          <Project key={project.id} project={project} />
          )}
+         </div>
+         <About />
          <Contact />
         </>}
       />

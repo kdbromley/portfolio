@@ -1,5 +1,7 @@
 .Project__container {
-    border: 1px white solid;
+    background-color: #4e4b4b;
+    padding: 10px;
+    margin-bottom: 15px; 
 }
 
 .Project__name {

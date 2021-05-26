@@ -6,7 +6,7 @@
 .header__title-container {
   display: flex;
   flex-direction: row-reverse;
-  background-color: #130900;
+  background-color: #4e4b4b;
   top: 0;
   width: 100%;
   min-height: calc(85px + 25 * ((100vw - 320px) / 680));
@@ -30,7 +30,7 @@
   transition: color 1s;
 }
 
-span {
+h1 > span {
   font-size: 1px;
 }
 
@@ -39,7 +39,7 @@ span {
   position: fixed;
   min-height: calc(85px + 25 * ((100vw - 320px) / 680));
   max-height: calc(85px + 25 * ((100vw - 320px) / 680));
-  background-color: #130900;
+  background-color: #4e4b4b;
   top: 0;
   width: 100%;
   font-size: calc(18px + 15 * ((100vw - 320px) / 680));
@@ -82,10 +82,11 @@ span {
 main {
   font-family: 'Montserrat', 'Lato', Tahoma, Verdana, sans-serif;
   font-weight: 700;
-  margin: 2%;
   padding-top: 10px;
   min-height: 900px;
-  background: linear-gradient(155deg, #130900 0%, #241100 41%, #4b0d01 65%, #241100 71%,  #130900 100%);
+  background-color: rgb(233, 214, 171);
+  background-image: url('./img/deco-pattern.jpeg');
+  /*background: linear-gradient(155deg, #130900 0%, #241100 41%, #4b0d01 65%, #241100 71%,  #130900 100%);*/
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
