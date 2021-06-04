@@ -85,7 +85,6 @@ main {
   padding-top: 10px;
   min-height: 900px;
   background-color: rgb(233, 214, 171);
-  background-image: url('./img/deco-pattern.jpeg');
   /*background: linear-gradient(155deg, #130900 0%, #241100 41%, #4b0d01 65%, #241100 71%,  #130900 100%);*/
   background-attachment: fixed;
   background-position: center;
