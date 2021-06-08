@@ -1,13 +1,55 @@
 .Project__container {
-    background-color: #4e4b4b;
+    background-color:#e9d6ab;
     padding: 10px;
-    margin-bottom: 15px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .Project__name {
     font-family: 'Selznick Normal NF', 'Poiret One', sans-serif;
     font-weight: 400;
     letter-spacing: .33em;
-    font-size: 48px;
-    color: white;
+    font-size: calc(42px + 15 * ((100vw - 320px) / 680));
+    color:  #4e4b4b;
+    text-emphasis: filled transparent;
+    transition: text-emphasis-color 2s, font-stretch 2s ease-in-out;
+    margin: 0;
+    height: calc(80px + 100 * ((100vw - 320px) / 680));
+}
+.Project__name:hover {
+   text-emphasis-color: #70a497;
+   font-stretch: 150%;
+}
+
+.hover {
+    display: none
+}
+
+.Project__display-more {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Project__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+
+
+@media all and (min-width: 600px) {
+    .Project__name {
+        margin-left: 5%;
+    }
+    .Project__buttons {
+        flex-direction: row;
+        margin-right: 15%;
+    }
 }
