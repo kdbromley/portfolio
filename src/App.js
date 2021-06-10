@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { Route } from 'react-router';
 import menuIcon from './img/menu.svg';
+import placeholderImg from './img/placeholder.png'
 import Navbar from './Navbar/Navbar';
 import About from './About/About';
 import Contact from './Contact/Contact';
@@ -15,10 +16,6 @@ export default class App extends Component {
     isMobile: false,
   }
   
-  findProject = (projectName) => {
-    return STORE.projects.find(project => project.name === projectName)
-  }
-
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
     if(window.innerWidth < 600) {
@@ -62,19 +59,13 @@ export default class App extends Component {
         <div className='Projects'>
          <h2>Projects</h2>
          {STORE.projects.map(project => 
-         <Project key={project.id} project={project} />
+           <Project key={project.id} project={project} />
          )}
          </div>
          <About />
          <Contact />
         </>}
       />
-      <Route
-       path='/:projectName'
-       render={(props) => 
-        <Project {...props} project={this.findProject(props.match.params.projectName)}/>
-       }
-       />
       </>
     )
   }
@@ -106,6 +97,9 @@ export default class App extends Component {
            <Navbar aria='false' classes='screenreader'/>
         </header>
         <main>
+          <div className='bio'>
+            <img src={placeholderImg} alt='placeholder' />
+          </div>
           {this.renderRoutes()}
           <button className='menu-button mobile' aria-label='Open navbar menu'
            onClick={this.handleMenuClick}>

@@ -15,7 +15,6 @@ export default function Project(props) {
         } else {
             setIsDisplayMore(true)
         }
-        console.log(props.project.name)
     }
     
     let stopHoverImage = () => {
@@ -43,10 +42,11 @@ export default function Project(props) {
                 </div>
             </div>
             }
-        </div>
-        <div id='hoverimage' className='hoverimage' style={{ 'display': 'none' }}>
+            <div id='hoverimage' className='hoverimage' style={{ 'display': 'none' }}>
             <img src={underConst} />
         </div>
+        </div>
+
       </>
     )
 }

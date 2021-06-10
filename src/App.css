@@ -92,6 +92,23 @@ main {
   background-size: cover;
 }
 
+h2 {
+  padding: 10px;
+  align-self: center;
+}
+
+.Projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 0 5%
+}
+
+.Project__container:nth-child(2n) {
+  align-self: flex-start;
+}
+
 @media all and (min-width: 600px) {
   .header__title {
     font-weight: 500;
