@@ -57,12 +57,15 @@ export default class App extends Component {
        render={() => 
         <>
         <div className='Projects'>
-         <h2>Projects</h2>
+         <h3>Projects</h3>
          {STORE.projects.map(project => 
            <Project key={project.id} project={project} />
          )}
          </div>
+        <div className='About'>
+         <h3>About</h3>
          <About />
+        </div>
          <Contact />
         </>}
       />

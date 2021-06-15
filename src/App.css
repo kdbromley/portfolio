@@ -92,7 +92,7 @@ main {
   background-size: cover;
 }
 
-h2 {
+h3 {
   padding: 10px;
   align-self: center;
 }
@@ -102,11 +102,17 @@ h2 {
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-end;
-  padding: 0 5%
+  padding: 0 5%;
 }
 
 .Project__container:nth-child(2n) {
   align-self: flex-start;
+}
+
+.About > h3 {
+  background: #4e4b4b;
+  margin: 0;
+  color: #e9d6ab;
 }
 
 @media all and (min-width: 600px) {
