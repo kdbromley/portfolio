@@ -10,8 +10,8 @@ export default function Button(props) {
       case 'website': return <img src={linkIcon} alt='Website Link Icon' />;
       case 'github': return <img src={githubIcon} alt='Github Link Icon' />;
       case 'desc': return <img src={descIcon} alt='Description Link Icon' />;
-      case 'more': return <img src={moreIcon} alt='Read More Background Link Icon' />;
-      case 'less': return <img src={moreIcon} alt='Read More Background Link Icon' />;
+      case 'noshow': return <img src={moreIcon} alt='Read More Background Link Icon' />;
+      case 'show': return <img src={moreIcon} alt='Read More Background Link Icon' />;
       default: return `${props.label}`;
     }
   }

@@ -17,7 +17,7 @@ export default function About(props) {
   }
 
   return (
-    <div className='About__container' aria-live>
+    <div className='About__container' aria-live='polite'>
       <ul className={`About__skills ${isSkillsVis}`}>
         <li>HTML5</li>
         <li>CSS3</li>

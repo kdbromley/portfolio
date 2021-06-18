@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import { Route } from 'react-router';
 import menuIcon from './img/menu.svg';
-import placeholderImg from './img/placeholder.png'
 import Navbar from './Navbar/Navbar';
 import About from './About/About';
 import Contact from './Contact/Contact';
@@ -12,7 +11,8 @@ import { Link } from 'react-router-dom';
 
 export default class App extends Component {
   state = {
-    isNavbarVis: false,
+    isDesktopNavbarVis: false,
+    isMobileNavbarVis: false,
     isMobile: false,
   }
   
@@ -44,8 +44,10 @@ export default class App extends Component {
     }
   };
 
-  handleMenuClick = () => {
-    this.setState({isNavbarVis: !this.state.isNavbarVis})
+  handleMenuClick = (e) => {
+    let id = (e.currentTarget.id)
+    if(id === 'Desktop') this.setState({ isDesktopNavbarVis: !this.state.isDesktopNavbarVis })
+    if(id === 'Mobile') this.setState({ isMobileNavbarVis: !this.state.isMobileNavbarVis })
   }
 
   renderRoutes() {
@@ -74,40 +76,52 @@ export default class App extends Component {
   }
 
   render() {
-   /* if(this.state.isMobile) {
-      document.querySelector('.mobile').className='menu-button mobile'
-      document.querySelector('.desktop').className='menu-button desktop invisible'
-    } else {
-
-      document.querySelector('.desktop').className='menu-button desktop'
-      document.querySelector('.mobile').className='menu-button mobile invisible'
-    }*/
     return (
       <div className="App">
         <header>
           <div className={`header__title-container`}>
-            <Link to='/'> <h1 className={`header__title`} id='title'>
-              K.D.<span> </span>BROMLEY
-            </h1>
+            <Link to='/'> 
+             <h1 className={`header__title`} id='title'>
+               K.D.<span> </span>BROMLEY
+             </h1>
             </Link>
-            <button className='menu-button desktop' aria-label='Open navbar menu'
+            {(this.state.isMobile === false) &&
+             <button id='Desktop' className='menu-button desktop' aria-label='Open navbar menu'
              onClick={this.handleMenuClick}>
-              <img src={menuIcon} alt='Navbar Menu Icon' />
+              <img src={menuIcon} alt='Navbar Menu Icon' className='desktop-menu-icon' />
             </button>
+            }
           </div>
-         { this.state.isNavbarVis &&
-           <Navbar aria='true' classes='' /> }
+         { this.state.isDesktopNavbarVis &&
+           <Navbar aria='true' classes='Navbar__desktop' /> }
            <Navbar aria='false' classes='screenreader'/>
         </header>
         <main>
-          <div className='bio'>
-            <img src={placeholderImg} alt='placeholder' />
+          <div className='Projects' id='projects'>
+            <h3>Projects</h3>
+            {STORE.projects.map(project => 
+              <Project key={project.id} project={project} />
+            )}
           </div>
-          {this.renderRoutes()}
-          <button className='menu-button mobile' aria-label='Open navbar menu'
-           onClick={this.handleMenuClick}>
-              <img src={menuIcon} alt='Navbar Menu Icon' />
-          </button>
+          <div className='About' id='about'>
+            <h3>About</h3>
+            <About />
+          </div>
+          <div className='Contact' id='contact'>
+            <Contact />
+          </div>
+          <div className='Menu__mobile'>
+          {(this.state.isMobile === true) && 
+           <button id='Mobile' className='menu-button mobile' 
+            aria-label='Open navbar menu'
+            onClick={this.handleMenuClick}>
+              <img src={menuIcon} className='mobile-menu-icon' alt='Navbar Menu Icon' />
+           </button>
+          }
+          { this.state.isMobileNavbarVis &&
+           <Navbar aria='true' classes='Navbar__mobile' /> 
+          }
+          </div>
         </main>
         <footer>
           © 2021 k.d. Bromley

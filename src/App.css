@@ -1,6 +1,11 @@
 .App {
   text-align: center;
+  padding-bottom: 20px;
+  cursor: url('./img/circle-cursor.svg');
+}
 
+header {
+  z-index: 1;
 }
 
 .header__title-container {
@@ -67,7 +72,31 @@ h1 > span {
   width: calc(25px + 15 * ((100vw - 320px) / 680));
   height: calc(25px + 15 * ((100vw - 320px) / 680));
   margin: 2px;
+}
+
+.desktop-menu-icon {
   padding-bottom: 15px;
+}
+
+.Menu__mobile {
+  background-color: #9b1915;
+  border-radius: 5%;
+  position: fixed;
+  top: 90%;
+  right: 10%;
+  z-index: 2;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  align-items: center;  
+  padding: 5px;
+}
+
+.mobile-menu-icon {
+  padding: 0;
+}
+.Navbar__mobile {
+  padding-top: 10px;
 }
 /*
 .header__title {
@@ -83,13 +112,8 @@ main {
   font-family: 'Montserrat', 'Lato', Tahoma, Verdana, sans-serif;
   font-weight: 700;
   padding-top: 10px;
-  min-height: 900px;
   background-color: rgb(233, 214, 171);
-  /*background: linear-gradient(155deg, #130900 0%, #241100 41%, #4b0d01 65%, #241100 71%,  #130900 100%);*/
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  z-index: auto;
 }
 
 h3 {
@@ -113,6 +137,12 @@ h3 {
   background: #4e4b4b;
   margin: 0;
   color: #e9d6ab;
+}
+
+footer {
+  color: white;
+  display: block;
+  padding: 5%;
 }
 
 @media all and (min-width: 600px) {

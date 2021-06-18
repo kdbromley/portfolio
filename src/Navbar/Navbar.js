@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 export default function Navbar(props) {
+    if(props.classes === 'Navbar__mobile') document.querySelector('.mobile-detail').style.display = 'inherit';
     return (
         <nav className={props.classes} aria-hidden={props.aria}>
             <ul className='Navbar__links'>
-                <Link to='#about'><li>about</li></Link>
-                <Link to='#projects'><li>projects</li></Link>
-                <Link to='#contact'><li>contact</li></Link>
+                <a href='#about'><li>about<span className='mobile-detail' style={{'display': 'none'}}>||</span> </li></a>
+                <a href='#projects'><li>projects<span className='mobile-detail' style={{'display': 'none'}}>||</span> </li></a>
+                <a href='#contact'><li>contact</li></a>
             </ul>
         </nav>
     )

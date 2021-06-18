@@ -11,13 +11,6 @@
     
 }
 .About__skills {
-    /** Overlapping Divs **/ 
-    /* 
-    position: absolute;
-    width: calc(180px + 300 * ((100vw - 320px) / 680));
-    height: calc(180px + 500 * ((100vw - 320px) / 680));
-    z-index: 100;
-    */
     flex: 1;
     background-color: #4e4b4b;
     font-size: 18px;
@@ -27,18 +20,6 @@
 }
 
 .About__desc {
-   /** Overlapping Divs **/ 
-   /* 
-    position: absolute;
-    width: calc(200px + 400 * ((100vw - 320px) / 680));
-    height: calc(200px + 800 * ((100vw - 320px) / 680));
-    z-index: 110;
-    left: calc(150px + 200 * ((100vw - 320px) / 680));;
-    top: calc(150px + 200 * ((100vw - 320px) / 680));;
-    right: 0;
-    bottom: 0;
-    overflow-x: hidden; 
-    */
     flex: 2;
     line-height: 1.5em;
     background-color: #4e4b4b;

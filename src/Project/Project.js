@@ -43,7 +43,7 @@ export default function Project(props) {
             </div>
             }
             <div id='hoverimage' className='hoverimage' style={{ 'display': 'none' }}>
-            <img src={underConst} />
+            <img src={underConst} alt='placeholder'/>
         </div>
         </div>
 

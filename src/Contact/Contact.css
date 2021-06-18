@@ -1,8 +1,11 @@
 .Contact__container {
-    border: 1px white solid;
-    color: white;
+    padding: 8%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
-label {
-    display: block;
+.Contact > button {
+    margin-bottom: 15px;
 }
