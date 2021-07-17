@@ -1,8 +1,17 @@
 .App {
   text-align: center;
   padding-bottom: 20px;
-  cursor: url('./img/circle-cursor.svg');
+  cursor: url('./img/cursor.png'), auto;
+  color: #0D070A;
 }
+
+a:link, a:visited, a:hover, a:active {
+  color: #183a37; 
+}
+a:hover, a:active {
+  font-style: italic;
+}
+
 
 header {
   z-index: 1;
@@ -11,28 +20,27 @@ header {
 .header__title-container {
   display: flex;
   flex-direction: row-reverse;
-  background-color: #4e4b4b;
+  background-color: #ACA5A9;
   top: 0;
   width: 100%;
-  min-height: calc(85px + 25 * ((100vw - 320px) / 680));
-  max-height: calc(85px + 25 * ((100vw - 320px) / 680));
+  min-height: calc(100px + 25 * ((100vw - 320px) / 680));
+  max-height: calc(200px + 25 * ((100vw - 320px) / 680));
   justify-content: center;
   align-items: center;
-  transition: align-items 2s;
   padding-top: 22px;
+  transition: all 1s;
+  z-index: inherit;
 }
 
 
 
 .header__title {
   font-family: 'Selznick Normal NF', 'Poiret One', sans-serif;
-  color: #ba9d63;
+  color: #432534;
   font-weight: 500;
   letter-spacing: 0.33em;
-  font-size: calc(36px + 15 * ((100vw - 320px) / 680));
-  /* text shadow */
-  margin: 0;
-  transition: color 1s;
+  font-size: calc(38px + 15 * ((100vw - 320px) / 680));
+  z-index: inherit;
 }
 
 h1 > span {
@@ -42,15 +50,15 @@ h1 > span {
 .sticky {
   align-items: center;
   position: fixed;
-  min-height: calc(85px + 25 * ((100vw - 320px) / 680));
+  min-height: calc(50px + 25 * ((100vw - 320px) / 680));
   max-height: calc(85px + 25 * ((100vw - 320px) / 680));
-  background-color: #4e4b4b;
+  background-color: #ACA5A9;
   top: 0;
   width: 100%;
-  font-size: calc(18px + 15 * ((100vw - 320px) / 680));
   margin-top:0;
   padding-top: 4px;
   padding-bottom: 0;
+  transition: font-size 2s;
 }
 
 .sticky > h1, a {
@@ -58,7 +66,7 @@ h1 > span {
 }
 
 .sticky-text {
-  color: #e2c78e;
+  color: #432534;
   text-shadow: none;
 }
 
@@ -98,45 +106,66 @@ h1 > span {
 .Navbar__mobile {
   padding-top: 10px;
 }
-/*
-.header__title {
-  color: #40738C;
-}
-
-.header__nav {
-  color: #335C70;
-}
-*/
 
 main {
   font-family: 'Montserrat', 'Lato', Tahoma, Verdana, sans-serif;
   font-weight: 700;
   padding-top: 10px;
-  background-color: rgb(233, 214, 171);
+  background-color: #cfcbcd;
   z-index: auto;
+  cursor: url('./img/cursor.png'), auto;
 }
 
-h3 {
-  padding: 10px;
-  align-self: center;
+.Bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5% 3%;
+}
+ 
+
+.Bio__text {
+  line-height: 1.2em;
+}
+
+img.profPic {
+  filter: none;
+  width: calc(310px + 400 * ((100vw - 320px) / 680));
+  height: calc(200px + 400 * ((100vw - 320px) / 680));
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  z-index: 0;
+}
+
+img.smaller {
+  transform: scale(0.8);
+  transition: all 1s;
 }
 
 .Projects {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: flex-end;
-  padding: 0 5%;
+  align-items: center;
+  padding: 0;
+  background-color: #130900;
 }
 
-.Project__container:nth-child(2n) {
-  align-self: flex-start;
+.Projects__title {
+  letter-spacing: 2px;
+  /* position: fixed; */
+  z-index: 0;
 }
+
 
 .About > h3 {
-  background: #4e4b4b;
+  background: #04151f;
+  font-size: 38px;
+  letter-spacing: 15px;
   margin: 0;
-  color: #e9d6ab;
+  color: #c44900;
 }
 
 footer {
@@ -150,5 +179,38 @@ footer {
     font-weight: 500;
     letter-spacing: 0.33em;
     font-size: 80px;
+  }
+  .Bio {
+    flex-direction: row;
+    margin: 5%;
+  }
+   
+  h2 {
+    font-size: large;
+    padding-left: 2%;
+  }
+  .hireMe:link, .hireMe:visited, .hireMe:hover, .hireMe:active {
+    color: #9b1915;
+  }
+  
+  .Bio__text {
+    line-height: 2.5em;
+  }
+  
+  img.profPic {
+    filter: none;
+    width: calc(300px + 150 * ((100vw - 320px) / 680));
+    height: calc(200px + 150 * ((100vw - 320px) / 680));
+  }
+
+  .Projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 0 5%;
+  }
+  .Project__container:nth-child(2n) {
+    align-self: flex-start;
   }
 }

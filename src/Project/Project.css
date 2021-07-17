@@ -1,36 +1,39 @@
 .Project__container {
-    background-color:#e9d6ab;
-    padding: 10px;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    /*  height: calc(100px + 500 * ((100vw - 320px) / 680));
+    width: calc(200px + 500 * ((100vw - 320px) / 680)); */
+    height: 55vh;
+    width: 100%;
+    margin: 10% 0;
 }
 
 .Project__name {
+    position: relative;
+    opacity: 1;
     font-family: 'Selznick Normal NF', 'Poiret One', sans-serif;
-    font-weight: 400;
-    letter-spacing: .33em;
-    font-size: calc(42px + 15 * ((100vw - 320px) / 680));
-    color:  #4e4b4b;
-    text-emphasis: filled transparent;
-    transition: text-emphasis-color 2s, font-stretch 2s ease-in-out;
+    font-weight: 500;
+    letter-spacing: .43em;
+    font-size: calc(50px + 15 * ((100vw - 320px) / 680));
+    color:  white;
     margin: 0;
-    height: calc(80px + 100 * ((100vw - 320px) / 680));
-}
-.Project__name:hover {
-   text-emphasis-color: #70a497;
-   font-stretch: 150%;
-}
-
-.hover {
-    display: none
+    height: calc(75px + 100 * ((100vw - 320px) / 680));
+    width: 100%;
+    opacity: 1;
 }
 
 .Project__display-more {
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.no-display {
+    display: none;
 }
 
 .Project__buttons {
@@ -40,7 +43,45 @@
     align-items: center;
 }
 
+.on-aux::before {
+    content: "";
+    background: no-repeat center url('../img/under_construction.png');
+    background-size: contain;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+}
 
+.minder::before {
+    content: "";
+    background: no-repeat center url('../img/minder-home-page-desktop.png');
+    background-size: 150%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.35;
+}
+
+.noteful::before {
+    content: "";
+    background: no-repeat center url('../img/main-display-all-notes.png');
+    background-size: 150%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.35;
+}
+
+.container-display::before {
+    background: none;
+}
 
 
 
@@ -53,3 +94,4 @@
         margin-right: 15%;
     }
 }
+

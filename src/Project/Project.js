@@ -5,46 +5,31 @@ import './Project.css';
 import { useState } from 'react';
 
 export default function Project(props) {
-    const [isHover, setIsHover] = useState('')
-    const [isDisplayMore, setIsDisplayMore] = useState(false)
-    const [whoseDisplay, setWhoseDisplay] = useState('')
-
-    let handleClick = (e) => {
-        if(isDisplayMore) {
-            setIsDisplayMore(false)
-        } else {
-            setIsDisplayMore(true)
-        }
-    }
+    const [isDisplayMore, setIsDisplayMore] = useState('no-display')
     
-    let stopHoverImage = () => {
-        //
-    }
-    let hoverImage = () => {
-        let img= document.querySelector('.hoverimage')
-        
+    let project = props.project;
+
+    function handleClick() {
+        if(isDisplayMore === 'no-display') {
+            setIsDisplayMore('display')
+        } else {
+            setIsDisplayMore('no-display')
+        }
     }
 
     return (
        <>
-        <div className='Project__container' 
-          onMouseEnter={() => hoverImage()} 
-          onMouseLeave={() => stopHoverImage()}
+        <div className={`Project__container ${project.display} container-${isDisplayMore}`}
           onClick={() => handleClick()}>
-            <h3 className='Project__name'>{props.project.name}</h3>
-           
-           {isDisplayMore && 
-            <div className='Project__display-more'>
+            <h3 className='Project__name'>{project.name}</h3>
+    
+            <div className={`Project__display-more ${isDisplayMore}`}>
                 <p>{props.project.desc}</p>
                 <div className='Project__buttons'>
-                    <Link to={props.project.url} target='_blank'><Button type='button' label='website' link={props.project.url} /></Link>
-                    <Link to={props.project.github} target='_blank'><Button type='button' label='github' link={props.project.github} /></Link>
+                    <a href={project.url} target='_blank'><Button type='button' label='website' link={props.project.url} /></a>
+                    <a href={project.github} target='_blank'><Button type='button' label='github' link={props.project.github} /></a>
                 </div>
             </div>
-            }
-            <div id='hoverimage' className='hoverimage' style={{ 'display': 'none' }}>
-            <img src={underConst} alt='placeholder'/>
-        </div>
         </div>
 
       </>

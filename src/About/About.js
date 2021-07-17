@@ -29,8 +29,7 @@ export default function About(props) {
         <li>SQL / Knex</li>
       </ul>
       <div className='About__desc'> 
-        <p>I'm a new web developer finishing a certification program in Software Engineering at Thinkful. I'm mainly interested in frontend development but I have experience with backend technologies as well.
-      <br />
+        <p>
         I'm drawn to web development because I love to mix creativity with utility.<span className='ellipses'>...</span><span className={`description ${isDescVis}`}>I get a sincere sense of gratification from seeing my work have a tangible outcome and 
         effect. Even better, if that work is attractive, appealing, that it's a positive experience for others. I notice when website and apps are aesthetically pleasing, 
         functional, intuitive, and intelligent - they're enjoyable to use! I'm excited to one day be on the other end, creating those experiences for other users, 

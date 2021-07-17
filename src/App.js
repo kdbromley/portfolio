@@ -1,13 +1,14 @@
 import { Component } from 'react';
 import { Route } from 'react-router';
+import { Link } from 'react-router-dom';
 import menuIcon from './img/menu.svg';
+import profPic from './img/IMG_4289.jpeg';
 import Navbar from './Navbar/Navbar';
 import About from './About/About';
 import Contact from './Contact/Contact';
 import Project from './Project/Project';
 import { STORE } from './projects-store';
 import './App.css';
-import { Link } from 'react-router-dom';
 
 export default class App extends Component {
   state = {
@@ -37,10 +38,12 @@ export default class App extends Component {
       document.querySelector('.header__title').className='header__title sticky-text';
       var headHeight = document.querySelector('.header__title-container').offsetHeight
       page.style.paddingTop = (headHeight + 39 ) + 'px';
+      document.querySelector('.profPic').className='profPic smaller';
     } else {
       document.querySelector('.header__title-container').className='header__title-container';
       document.querySelector('.header__title').className='header__title';
-      page.style.paddingTop = 5 + 'px'
+      page.style.paddingTop = 5 + 'px';
+      document.querySelector('.profPic').className='profPic'
     }
   };
 
@@ -81,8 +84,8 @@ export default class App extends Component {
         <header>
           <div className={`header__title-container`}>
             <Link to='/'> 
-             <h1 className={`header__title`} id='title'>
-               K.D.<span> </span>BROMLEY
+             <h1 className={`header__title`} id='title'> 
+                K.D.<span> </span>BROMLEY
              </h1>
             </Link>
             {(this.state.isMobile === false) &&
@@ -97,8 +100,16 @@ export default class App extends Component {
            <Navbar aria='false' classes='screenreader'/>
         </header>
         <main>
+          <div className='Bio'>
+            <img src={profPic} alt='Me, looking at the camera, against a background of forest and hills' className='profPic'/>
+            <div className='Bio__text'>
+              <p>Upcoming graduate of the certificate program in Software Engineering at Thinkful. Front-end focused but with backend experience.
+                <a href='#contact'className='hire-me'> Currently looking employment as a Jr. Web Developer! </a> 
+              </p>
+            </div>
+          </div>
           <div className='Projects' id='projects'>
-            <h3>Projects</h3>
+            <h3 className='Projects__title'>Projects</h3>
             {STORE.projects.map(project => 
               <Project key={project.id} project={project} />
             )}
