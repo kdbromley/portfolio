@@ -3,11 +3,16 @@ nav  {
     font-weight: 300;
     letter-spacing: 1.5px;
     font-size: calc(18px + 30 * ((100vw - 320px) / 680));
+    position: relative;
 }
 
 .Navbar__mobile {
     padding: 0;
  }
+
+.Navbar__desktop {
+    background-color: #ACA5A9;
+}
 
 .Navbar__links {
     list-style: none;
@@ -48,5 +53,12 @@ nav  {
     nav  {
         font-size: 40px;
     }
-    
+
+    .Navbar__links {
+        justify-content: space-around;
+    }
+    .Nav__link:link, .Nav__link:visited, .Nav__link:hover, .Nav__link:active {
+        color: #432534;
+        text-decoration: none;
+    }
 }

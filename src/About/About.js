@@ -17,11 +17,11 @@ export default function About(props) {
       </ul>
       <div className='About__desc'> 
         <p>
-        I'm drawn to front-end development because I love to mix creativity with utility, turning design into a functional web page.
-        I enjoy the logic and challenge of coding 
+        After deciding a year ago to change careers from Neuroscience, I found myself drawn to web development and am now an upcoming graduate of a certificate program in Software Engineering and looking for my first professional role as a Web Developer. 
+        I'm mainly interested in front-end development because, though not a designer myself, I enjoy working with design and seeing the tangible results of my work, turning a concept into a functional product.
       <br />
-        I also know that no website or app is the work of a singular person. My background in Neuroscience and 
-        Writing gave me plenty of experience in teamwork and cooperation and I look forward to working on a team again.
+        I also know that no project is the work of a singular person. My background in Neuroscience and 
+        Writing gave me plenty of experience in teamwork and collaboration and I look forward to working on a team again.
         </p>
       </div>
     </div>
