@@ -6,7 +6,7 @@
     align-items: center;
     /*  height: calc(100px + 500 * ((100vw - 320px) / 680));
     width: calc(200px + 500 * ((100vw - 320px) / 680)); */
-    height: 55vh;
+    height: 45vh;
     width: 100%;
     margin: 10% 0;
 }
@@ -15,9 +15,9 @@
     position: relative;
     opacity: 1;
     font-family: 'Selznick Normal NF', 'Poiret One', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: .43em;
-    font-size: calc(50px + 15 * ((100vw - 320px) / 680));
+    font-size: calc(60px + 15 * ((100vw - 320px) / 680));
     color:  white;
     margin: 0;
     height: calc(75px + 100 * ((100vw - 320px) / 680));
@@ -64,7 +64,7 @@
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.35;
+    opacity: 0.30;
 }
 
 .noteful::before {
@@ -76,7 +76,7 @@
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.35;
+    opacity: 0.30;
 }
 
 .container-display::before {
@@ -86,12 +86,32 @@
 
 
 @media all and (min-width: 600px) {
+    .Project__container {
+        height: 75vh;
+        width: 100%;
+    }
+
     .Project__name {
         margin-left: 5%;
+        font-weight: 500;
+        letter-spacing: .45em;
+        font-size: calc(90px + 15 * ((100vw - 320px) / 680));
     }
     .Project__buttons {
-        flex-direction: row;
-        margin-right: 15%;
+        justify-content: space-evenly;
+    }
+    
+    .minder::before {
+        background-size: 90%;
+
+    }
+    
+    .noteful::before {
+        background-size: 90%;
+    }
+
+    .Project__display-more {
+       font-size: calc(20px + 15 * ((100vw - 320px) / 680));
     }
 }
 

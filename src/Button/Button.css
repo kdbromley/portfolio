@@ -9,14 +9,14 @@ button {
     padding: 1px 1px 1px 1px;
 }
 
-button:hover {
-    cursor: pointer;
-}
-
-img {
-    filter: invert(67%) sepia(32%) saturate(317%) hue-rotate(115deg) brightness(86%) contrast(86%);
+img.contact-icon {
+    filter: invert(12%) sepia(8%) saturate(4087%) hue-rotate(278deg) brightness(98%) contrast(85%);
     height: calc(40px + 50 * ((100vw - 320px) / 680));
     width: calc(40px + 50 * ((100vw - 320px) / 680));
+}
+
+img.project-icon {
+    filter: invert(85%) sepia(8%) saturate(73%) hue-rotate(278deg) brightness(101%) contrast(80%);
 }
 
 @media all and (min-width: 800px) {

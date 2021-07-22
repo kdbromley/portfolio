@@ -5,13 +5,16 @@
   color: #0D070A;
 }
 
-a:link, a:visited, a:hover, a:active {
+.hire-me:link, .hire-me:visited, .hire-me:hover, .hire-me:active {
   color: #183a37; 
 }
 a:hover, a:active {
   font-style: italic;
 }
 
+.title-link:link, .title-link:visited, .title-link:hover, .title-link:active {
+  text-decoration: none;
+}
 
 header {
   z-index: 1;
@@ -32,14 +35,12 @@ header {
   z-index: inherit;
 }
 
-
-
 .header__title {
   font-family: 'Selznick Normal NF', 'Poiret One', sans-serif;
   color: #432534;
   font-weight: 500;
   letter-spacing: 0.33em;
-  font-size: calc(38px + 15 * ((100vw - 320px) / 680));
+  font-size: calc(38px + 80 * ((100vw - 320px) / 680));
   z-index: inherit;
 }
 
@@ -58,53 +59,35 @@ h1 > span {
   margin-top:0;
   padding-top: 4px;
   padding-bottom: 0;
-  transition: font-size 2s;
 }
 
-.sticky > h1, a {
-  padding-bottom: 15px;
-}
-
-.sticky-text {
-  color: #432534;
-  text-shadow: none;
-}
-
-.invisible, .invisible > img {
-  visibility: hidden;
-}
 
 
 .menu-button > img {
-  filter: invert(67%) sepia(32%) saturate(317%) hue-rotate(115deg) brightness(86%) contrast(86%);
   width: calc(25px + 15 * ((100vw - 320px) / 680));
   height: calc(25px + 15 * ((100vw - 320px) / 680));
   margin: 2px;
 }
 
-.desktop-menu-icon {
+img.desktop-menu-icon {
   padding-bottom: 15px;
+}
+img.mobile-menu-icon {
+  filter: invert(85%) sepia(8%) saturate(73%) hue-rotate(278deg) brightness(101%) contrast(80%);
 }
 
 .Menu__mobile {
-  background-color: #9b1915;
+  background-color: #432534;
   border-radius: 5%;
   position: fixed;
-  top: 90%;
-  right: 10%;
+  top: 87%;
+  right: 5%;
   z-index: 2;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-evenly;
   align-items: center;  
   padding: 5px;
-}
-
-.mobile-menu-icon {
-  padding: 0;
-}
-.Navbar__mobile {
-  padding-top: 10px;
 }
 
 main {
@@ -139,11 +122,6 @@ img.profPic {
   z-index: 0;
 }
 
-img.smaller {
-  transform: scale(0.8);
-  transition: all 1s;
-}
-
 .Projects {
   display: flex;
   flex-direction: column;
@@ -155,17 +133,21 @@ img.smaller {
 
 .Projects__title {
   letter-spacing: 2px;
-  /* position: fixed; */
   z-index: 0;
+  font-size: calc(38px + 40 * ((100vw - 320px) / 680));
+  letter-spacing: 10px;
+  margin: 30px 0 0 0;
+  padding: 10px;
+  width: 100%;
+  color: #cfcbcd;
 }
 
 
 .About > h3 {
-  background: #04151f;
-  font-size: 38px;
-  letter-spacing: 15px;
-  margin: 0;
-  color: #c44900;
+  font-size: calc(28px + 50 * ((100vw - 320px) / 680));
+  letter-spacing: 10px;
+  margin: 20px 0 0 0;
+  color: #432534;
 }
 
 footer {
@@ -179,7 +161,13 @@ footer {
     font-weight: 500;
     letter-spacing: 0.33em;
     font-size: 80px;
+    padding-bottom: 15px;
   }
+
+  .header__title-container {
+    height: calc(90px + 50 * ((100vw - 320px) / 680));
+  }
+
   .Bio {
     flex-direction: row;
     margin: 5%;

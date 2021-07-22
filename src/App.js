@@ -24,7 +24,6 @@ export default class App extends Component {
     } else {
       this.setState({ isMobile: false })
     }
-
   }
 
   componentWillUnmount() {
@@ -38,12 +37,10 @@ export default class App extends Component {
       document.querySelector('.header__title').className='header__title sticky-text';
       var headHeight = document.querySelector('.header__title-container').offsetHeight
       page.style.paddingTop = (headHeight + 39 ) + 'px';
-      document.querySelector('.profPic').className='profPic smaller';
     } else {
       document.querySelector('.header__title-container').className='header__title-container';
       document.querySelector('.header__title').className='header__title';
       page.style.paddingTop = 5 + 'px';
-      document.querySelector('.profPic').className='profPic'
     }
   };
 
@@ -83,7 +80,7 @@ export default class App extends Component {
       <div className="App">
         <header>
           <div className={`header__title-container`}>
-            <Link to='/'> 
+            <Link to='/' className='title-link'> 
              <h1 className={`header__title`} id='title'> 
                 K.D.<span> </span>BROMLEY
              </h1>
@@ -104,35 +101,37 @@ export default class App extends Component {
             <img src={profPic} alt='Me, looking at the camera, against a background of forest and hills' className='profPic'/>
             <div className='Bio__text'>
               <p>Upcoming graduate of the certificate program in Software Engineering at Thinkful. Front-end focused but with backend experience.
-                <a href='#contact'className='hire-me'> Currently looking employment as a Jr. Web Developer! </a> 
+                <a href='#contact'className='hire-me'> Currently looking for employment as a Jr. Web Developer! </a> 
               </p>
             </div>
           </div>
           <div className='Projects' id='projects'>
-            <h3 className='Projects__title'>Projects</h3>
+            <h3 className='Projects__title'>Project Portfolio</h3>
             {STORE.projects.map(project => 
               <Project key={project.id} project={project} />
             )}
           </div>
           <div className='About' id='about'>
-            <h3>About</h3>
+            <h3>Skills + Background</h3>
             <About />
           </div>
           <div className='Contact' id='contact'>
             <Contact />
           </div>
-          <div className='Menu__mobile'>
           {(this.state.isMobile === true) && 
+          <div className='Menu__mobile'>
+          
            <button id='Mobile' className='menu-button mobile' 
             aria-label='Open navbar menu'
             onClick={this.handleMenuClick}>
-              <img src={menuIcon} className='mobile-menu-icon' alt='Navbar Menu Icon' />
+              <img src={menuIcon} alt='Navbar Menu Icon' className='mobile-menu-icon'/>
            </button>
-          }
+          
           { this.state.isMobileNavbarVis &&
            <Navbar aria='true' classes='Navbar__mobile' /> 
           }
           </div>
+        }
         </main>
         <footer>
           © 2021 k.d. Bromley

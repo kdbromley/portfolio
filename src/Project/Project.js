@@ -1,5 +1,3 @@
-import underConst from '../img/under_construction.png'
-import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import './Project.css';
 import { useState } from 'react';
@@ -26,12 +24,12 @@ export default function Project(props) {
             <div className={`Project__display-more ${isDisplayMore}`}>
                 <p>{props.project.desc}</p>
                 <div className='Project__buttons'>
-                    <a href={project.url} target='_blank'><Button type='button' label='website' link={props.project.url} /></a>
-                    <a href={project.github} target='_blank'><Button type='button' label='github' link={props.project.github} /></a>
+                    <a href={project.url} target='_blank' rel='noreferrer'><Button type='button' label='website' aria='Live website' class='project-icon' /></a>
+                    <a href={project.github} target='_blank' rel='noreferrer'><Button type='button' label='github' aria='Github page' class='project-icon' /></a>
                 </div>
             </div>
         </div>
 
       </>
-    )
+    ) 
 }

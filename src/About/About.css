@@ -1,28 +1,23 @@
 .About__container {
-    color: #e9d6ab;
-    margin-top: 0;
-    /** Overlapping Divs **/ 
-    /* 
-    position: relative; 
-    */
+    background-color: #cfcbcd;
+    color: #0D070A;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     
 }
 .About__skills {
     flex: 1;
-    background-color: #4e4b4b;
     font-size: 18px;
     text-align: center;
     margin:0;
     padding-top: 20px;
+    column-count: 2;
 }
 
 .About__desc {
     flex: 2;
     line-height: 1.5em;
-    background-color: #4e4b4b;
 }
 
 ul {
